@@ -1,0 +1,34 @@
+{
+  "name": "vite-project-vue2",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^4.3.9",
+    "vite-plugin-vue2": "^2.0.3",
+    "vue-template-compiler": "^2.7.14"
+  },
+  "dependencies": {
+    "@imgly/background-removal": "^1.0.3",
+    "@jonny1994/postcss-px-to-viewport": "^1.1.0",
+    "@types/file-saver": "^2.0.5",
+    "@vitejs/plugin-legacy": "^4.0.5",
+    "axios": "^1.4.0",
+    "babel-plugin-component": "^1.1.1",
+    "element-ui": "^2.15.13",
+    "face-api.js": "^0.22.2",
+    "file-saver": "^2.0.5",
+    "postcss": "^8.4.25",
+    "terser": "^5.19.0",
+    "vue": "^2.7.14",
+    "vue-router": "3.5.1"
+  },
+  "peerDependencies": {
+    "postcss": "^8.4.25"
+  }
+}

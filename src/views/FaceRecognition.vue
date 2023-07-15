@@ -33,10 +33,10 @@ export default {
   methods: {
     async loadModels () {
       this.modelsLoaded = false;
-      await faceapi.loadSsdMobilenetv1Model('/models');
-      await faceapi.loadFaceLandmarkTinyModel('/models');
-      await faceapi.loadFaceExpressionModel('/models');
-      await faceapi.loadAgeGenderModel('/models');
+      await faceapi.loadSsdMobilenetv1Model('./models');
+      await faceapi.loadFaceLandmarkTinyModel('./models');
+      await faceapi.loadFaceExpressionModel('./models')
+      await faceapi.loadAgeGenderModel('./models');
       this.modelsLoaded = true;
     },
     async startVideo () {
@@ -85,7 +85,7 @@ export default {
           for (let [expressionKey, expressionValue] of Object.entries(expressions)) {
             if (expressionValue > 0.5) {
               const expressionChinese = expressionMapping[expressionKey];
-              expressionTexts.push(`表情：${expressionChinese} (${expressionValue})`);
+              expressionTexts.push(`表情：${expressionChinese} (${expressionValue.toFixed(2)})`);
             }
           }
           new faceapi.draw.DrawTextField(
@@ -136,8 +136,14 @@ export default {
 }
 
 .camera-area {
-  width: 100%;
+  width: 320px;
   position: relative;
+  margin: 0 auto;
+}
+
+.camera-area video {
+  width: 100%;
+  height: auto;
 }
 
 .camera-area canvas {
@@ -145,5 +151,6 @@ export default {
   top: 0;
   left: 0;
   z-index: 99;
+  width: 100%;
 }
 </style>

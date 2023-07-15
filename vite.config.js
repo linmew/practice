@@ -42,6 +42,6 @@ export default defineConfig({
       output: {
         comments: false, // 移除注释
       },
-    },
+    }
   }
 })

@@ -35,7 +35,7 @@ export default {
       this.modelsLoaded = false;
       await faceapi.loadSsdMobilenetv1Model('./models');
       await faceapi.loadFaceLandmarkTinyModel('./models');
-      await faceapi.loadFaceExpressionModel('./models')
+      await faceapi.loadFaceExpressionModel('./models');
       await faceapi.loadAgeGenderModel('./models');
       this.modelsLoaded = true;
     },

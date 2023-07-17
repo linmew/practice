@@ -18,9 +18,7 @@ export default defineConfig({
         target: 'https://paimons.cn',
         ws: false,
         changeOrigin: true,
-        pathRewrite: {
-          '^/tools': '/tools'
-        }
+        rewrite: (path) => path.replace(/^\/tools/, '')
       }
     }
   },

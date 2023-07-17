@@ -5,7 +5,7 @@
       <el-button type="danger" @click="stopVideo">关闭摄像头</el-button>
     </div>
     <div class="camera-area">
-      <video id="video" ref="video" autoplay muted playsinline></video>
+      <video id="video" ref="video" autoplay muted playsinline>请开启摄像头识别人脸</video>
       <canvas ref="canvas"></canvas>
     </div>
   </div>
@@ -24,11 +24,10 @@ export default {
       timer: null,
       modelsLoaded: false,
       canvas: null
-
     }
   },
   mounted () {
-    this.loadModels()
+    this.loadModels();
   },
   methods: {
     async loadModels () {
@@ -75,8 +74,8 @@ export default {
           .withFaceExpressions();
         const resizedDetections = faceapi.resizeResults(detections, { width: this.$refs.video.videoWidth, height: this.$refs.video.videoHeight });
         this.$refs.canvas.getContext('2d').clearRect(0, 0, this.$refs.canvas.width, this.$refs.canvas.height);
-        faceapi.draw.drawDetections(this.$refs.canvas, resizedDetections);
-        faceapi.draw.drawFaceLandmarks(this.$refs.canvas, resizedDetections);
+        faceapi.draw.drawDetections(this.$refs.canvas, resizedDetections)
+        faceapi.draw.drawFaceLandmarks(this.$refs.canvas, resizedDetections)
         // faceapi.draw.drawFaceExpressions(this.$refs.canvas, resizedDetections);
         resizedDetections.forEach(result => {
           const { age, gender, genderProbability, expressions } = result;

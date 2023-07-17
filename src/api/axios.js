@@ -16,22 +16,22 @@ instance.interceptors.request.use(function (config) {
     // 处理 Axios 错误
     console.error(error.message)
   }
-  return Promise.reject(error);
+  return Promise.reject(error)
 });
 
 // 添加响应拦截器
 instance.interceptors.response.use(function (response) {
   // 对响应数据做点什么，比如隐藏加载指示器
   console.log(response)
-  return response;
+  return response
 }, function (error) {
   // 对响应错误做点什么
   if (axios.isAxiosError(error)) {
     // 处理 Axios 错误
     console.error(error.message)
   }
-  return Promise.reject(error);
+  return Promise.reject(error)
 });
 
 // 导出 Axios 实例
-export default instance;
+export default instance

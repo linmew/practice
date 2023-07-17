@@ -1,7 +1,7 @@
-import { defineConfig } from 'vite';
-import { createVuePlugin } from 'vite-plugin-vue2';
+import { defineConfig } from 'vite'
+import { createVuePlugin } from 'vite-plugin-vue2'
 import legacy from '@vitejs/plugin-legacy'
-import path from 'path';
+import path from 'path'
 
 export default defineConfig({
   base: './',
@@ -38,8 +38,8 @@ export default defineConfig({
         pure_funcs: ['console.log'] // 移除 console.log
       },
       output: {
-        comments: false, // 移除注释
-      },
+        comments: false // 移除注释
+      }
     }
   }
 })

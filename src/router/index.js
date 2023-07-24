@@ -28,18 +28,25 @@ const routes = [
     meta: {
       title: '人脸识别'
     }
+  }, {
+    path: '/Count',
+    name: 'Count',
+    component: () => import('@/views/Count.vue'),
+    meta: {
+      title: 'pinia使用测试'
+    }
   }
 ]
 
 const router = new VueRouter({
   mode: 'hash',
-  //base: process.env.BASE_URL,
+  // base: process.env.BASE_URL,
   routes
 })
 
 router.beforeEach((to, from, next) => {
   // 使用路由元信息设置页面标题
-  document.title = to.meta.title || '';
-  next();
-});
+  document.title = to.meta.title || ''
+  next()
+})
 export default router
